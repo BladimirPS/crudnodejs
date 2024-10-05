@@ -1,0 +1,19 @@
+<!-- views/sucursales/edit.ejs -->
+<h1><%= title %></h1>
+
+<form action="/sucursales/<%= sucursal.idSucursal %>?_method=PUT" method="POST">
+  <div>
+    <label for="idEmpresa">Empresa:</label>
+    <select name="idEmpresa" id="idEmpresa" required>
+      <% empresas.forEach(function(empresa) { %>
+        <option value="<%= empresa.idEmpresa %>" <% if (empresa.idEmpresa === sucursal.idEmpresa) { %>selected<% } %>><%= empresa.nombre %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" name="descripcion" id="descripcion" value="<%= sucursal.descripcion %>" required>
+  </div>
+  <!-- Agrega los demás campos necesarios -->
+  <button type="submit">Actualizar</button>
+</form>

@@ -1,0 +1,17 @@
+<!-- views/empresas/edit.ejs -->
+
+
+<h1>Editar Empresa</h1>
+
+<form action="/empresas/<%= empresa.idempresa %>?_method=PUT" method="POST">
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" value="<%= empresa.nombre %>" required>
+  </div>
+  <div>
+    <label for="direccion">Dirección:</label>
+    <input type="text" name="direccion" id="direccion" value="<%= empresa.direccion %>" required>
+  </div>
+  <!-- Agrega los demás campos necesarios -->
+  <button type="submit">Actualizar</button>
+</form>

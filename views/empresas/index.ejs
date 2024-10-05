@@ -1,0 +1,33 @@
+<!-- views/empresas/index.ejs -->
+
+
+<h1>Lista de Empresas</h1>
+
+<a href="/empresas/create">Crear Nueva Empresa</a>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% empresas.forEach(function(empresa) { %>
+      <tr>
+        <td><%= empresa.idempresa %></td>
+        <td><%= empresa.nombre %></td>
+        <td><%= empresa.direccion %></td>
+        <td>
+          <a href="/empresas/<%= empresa.idempresa %>">Ver</a>
+          <a href="/empresas/<%= empresa.idempresa %>/edit">Editar</a>
+          <form action="/empresas/<%= empresa.idempresa %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

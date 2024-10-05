@@ -1,0 +1,25 @@
+<!-- views/empresas/create.ejs -->
+
+
+<h1>Crear Nueva Empresa</h1>
+
+<form action="/empresas" method="POST">
+  <div>
+    <label for="idEmpresa">ID Empresa:</label>
+    <input type="text" name="idEmpresa" id="idEmpresa" required>
+  </div>
+  <div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" required>
+  </div>
+  <div>
+    <label for="direccion">Dirección:</label>
+    <input type="text" name="direccion" id="direccion" required>
+  </div>
+  <!-- Agrega los demás campos necesarios -->
+  <div>
+    <label for="adiciono">Adicionó:</label>
+    <input type="text" name="adiciono" id="adiciono" required>
+  </div>
+  <button type="submit">Guardar</button>
+</form>

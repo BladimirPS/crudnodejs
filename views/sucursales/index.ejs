@@ -1,0 +1,33 @@
+<!-- views/sucursales/index.ejs -->
+<h1><%= title %></h1>
+
+<a href="/sucursales/create">Crear Nueva Sucursal</a>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Empresa</th>
+      <th>Descripción</th>
+      <th>Dirección</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% sucursales.forEach(function(sucursal) { %>
+      <tr>
+        <td><%= sucursal.idsucursal %></td>
+        <td><%= sucursal.idempresa %></td>
+        <td><%= sucursal.descripcion %></td>
+        <td><%= sucursal.direccion %></td>
+        <td>
+          <a href="/sucursales/<%= sucursal.idsucursal %>">Ver</a>
+          <a href="/sucursales/<%= sucursal.idsucursal %>/edit">Editar</a>
+          <form action="/sucursales/<%= sucursal.idsucursal %>?_method=DELETE" method="POST" style="display:inline;">
+            <button type="submit">Eliminar</button>
+          </form>
+        </td>
+      </tr>
+    <% }); %>
+  </tbody>
+</table>

@@ -1,0 +1,15 @@
+<!-- views/sucursales/show.ejs -->
+<h1><%= title %></h1>
+
+
+
+<ul>
+  <li><strong>ID:</strong> <%= sucursal.idsucursal %></li>
+  <li><strong>Empresa:</strong> <%= sucursal.idempresa %></li>
+  <li><strong>Descripción:</strong> <%= sucursal.descripcion %></li>
+  <li><strong>Dirección:</strong> <%= sucursal.direccion %></li>
+  <!-- Muestra los demás campos -->
+</ul>
+
+<a href="/sucursales/<%= sucursal.idsucursal %>/edit">Editar</a>
+<a href="/sucursales">Volver al listado</a>

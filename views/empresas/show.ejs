@@ -1,0 +1,12 @@
+<!-- views/empresas/show.ejs -->
+<h1><%= title %></h1>
+
+<ul>
+  <li><strong>ID:</strong> <%= empresa.idempresa %></li>
+  <li><strong>Nombre:</strong> <%= empresa.nombre %></li>
+  <li><strong>Dirección:</strong> <%= empresa.direccion %></li>
+  <!-- Muestra los demás campos -->
+</ul>
+
+<a href="/empresas/<%= empresa.idempresa %>/edit">Editar</a>
+<a href="/empresas">Volver al listado</a>

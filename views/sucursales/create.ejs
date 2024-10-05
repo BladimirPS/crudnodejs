@@ -1,0 +1,25 @@
+<!-- views/sucursales/create.ejs -->
+<% layout('layout', { title: 'Crear Sucursal' }) %>
+
+<h1>Crear Nueva Sucursal</h1>
+
+<form action="/sucursales" method="POST">
+  <div>
+    <label for="idSucursal">ID Sucursal:</label>
+    <input type="text" name="idSucursal" id="idSucursal" required>
+  </div>
+  <div>
+    <label for="idEmpresa">Empresa:</label>
+    <select name="idEmpresa" id="idEmpresa" required>
+      <% empresas.forEach(function(empresa) { %>
+        <option value="<%= empresa.idempresa %>"><%= empresa.nombre %></option>
+      <% }); %>
+    </select>
+  </div>
+  <div>
+    <label for="descripcion">Descripción:</label>
+    <input type="text" name="descripcion" id="descripcion" required>
+  </div>
+  <!-- Agrega los demás campos necesarios -->
+  <button type="submit">Guardar</button>
+</form>
